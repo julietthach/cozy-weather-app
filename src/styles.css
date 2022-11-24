@@ -12,6 +12,7 @@
     border: 3px solid #885df1;
     border-radius: 35px;
     max-width: 740px;
+    min-width: 550px;
     background-image: url(https://images.squarespace-cdn.com/content/v1/5c702bc465019f9573ec4c2b/1630094368745-GB8NVYEVVHB2UKX8Y3FU/final+with+character+in+window.gif?format=750w);
 }
 
@@ -89,3 +90,8 @@ ul {
     font-size: 20px;
 }
 
+.author {
+    padding-top: 10px;
+    display: block;
+    text-align: center;
+}
