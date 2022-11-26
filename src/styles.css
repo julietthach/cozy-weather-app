@@ -1,8 +1,20 @@
-
 #search-form {
-    margin: 0;
-    padding: 15px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+#search-bar {
+    margin: 10px;
+    padding: 10px;
+   width: 25%;
+}
+
+#search-button {
+    width: 5%;
+    margin: 10px;
+    padding: 10px;
+    color: white;
+    background-color: #885df1;
+    border: 1px solid #885df1;
 }
 
 .block {
@@ -14,6 +26,7 @@
     max-width: 740px;
     min-width: 550px;
     background-image: url(https://images.squarespace-cdn.com/content/v1/5c702bc465019f9573ec4c2b/1630094368745-GB8NVYEVVHB2UKX8Y3FU/final+with+character+in+window.gif?format=750w);
+    box-shadow: 5px 10px #060636;
 }
 
 h3 {
