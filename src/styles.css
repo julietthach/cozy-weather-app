@@ -15,18 +15,28 @@
     color: white;
     background-color: #885df1;
     border: 1px solid #885df1;
+    
 }
 
 .block {
     margin: 0 auto;
     text-align: center;
-    padding: 30px;
-    border: 3px solid #885df1;
     border-radius: 35px;
     max-width: 740px;
     min-width: 550px;
     background-image: url(https://images.squarespace-cdn.com/content/v1/5c702bc465019f9573ec4c2b/1630094368745-GB8NVYEVVHB2UKX8Y3FU/final+with+character+in+window.gif?format=750w);
-    box-shadow: 5px 10px #060636;
+    padding: 30px;
+    box-shadow: 5px 10px #360632;
+    border: 4px solid #e415ff5d;
+}
+
+.overlay {
+    z-index: 2;
+    background: linear-gradient(135deg, #f0e8e8d0, #e415ff5d);
+    border-radius: 30px;
+   
+    padding: 10px;
+    
 }
 
 h3 {
@@ -34,7 +44,7 @@ h3 {
     padding: 10px;
     font-family: 'Press Start 2P', cursive;
     font-size: 16px;
-    color: white;
+    color: black;
     text-align: left;
 }
 
@@ -43,7 +53,7 @@ h1 {
     padding: 10px;
     font-family: 'Press Start 2P', cursive;
     font-size: 50px;
-    color: white;
+    color: black;
     text-align: left;
 }
 
@@ -99,7 +109,7 @@ ul {
 }
 
 #description {
-    color: white;
+    color: black;
     font-size: 20px;
 }
 
