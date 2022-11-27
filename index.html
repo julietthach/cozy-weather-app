@@ -14,7 +14,8 @@
   <body>
         <form id="search-form">
                 <input type="search" id="search-bar" placeholder="Enter a city ..." class="form-control" />
-                <button type="submit" id="search-button" value="Search" class="btn btn-primary">Search</button>     
+                <button type="submit" id="search-button" value="Search" class="btn btn-primary">Search</button>
+                <span id="farenheit-link">°F/°C</span>     
         </form>
 
 
@@ -25,8 +26,8 @@
             <div class="row">
                 <div class="col">
                     <h3 id="city">Toronto, ON</h3>
-                    <h1>18°C</h1>
-                    <div><img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/053/245/original/kindpng_4183928.png?1668302790" width="200" id="weather-img"></div>
+                    <h1><span id="temperature">18</span>°C</h1>
+                    <div><img src="" width="200" id="icon"></div>
                     <ul>
                         <li id="description">Cloudy</li>
                         <li>Humidity: <span id="humidity">90</span>%</li>
