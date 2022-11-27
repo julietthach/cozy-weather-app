@@ -23,6 +23,7 @@ farenheitLink.addEventListener("click", changeTempUnit)
 let apiKey = "2b6fdad0cbd018949c50c70f72250726";
 let temperatureValue = document.querySelector("h3");
 
+
 document.getElementById("current-date").innerHTML = currentDay;
 
 
@@ -63,8 +64,12 @@ function currentTime() {
 
 function changeCity(event, response) {
   event.preventDefault();
+
+  console.log(response.data.weather)
+
   let searchInput = document.querySelector("#search-bar");
   let temperatureValue = document.querySelector("h3");
+  let iconElement = document.querySelector("#icon");
 
   celsiusTemperature = Math.round(response.data.main.temp);
 
@@ -76,11 +81,12 @@ function changeCity(event, response) {
   response.data.weather[0].main;
   temperatureValue.innerHTML = `${searchInput.value}`;
   defaultTemperature.innerHTML = temperature + "°C";
-  iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${data.data.weather[0].icon}@2x.png` ) ;
+  iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
 
 function getTemperature(event) {
   event.preventDefault();
+
   let city = document.querySelector("#search-bar").value;
   let units = "metric";
   let weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`;
@@ -101,5 +107,5 @@ function changeTempUnit(event) {
   
 }
 
-navigator.geolocation.getCurrentPosition(showCurrentPosition)
+navigator.geolocation.getCurrentPosition(showCurrentPosition);
 currentTime();
