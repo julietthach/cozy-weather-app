@@ -31,13 +31,16 @@ function showCurrentPosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let locationApiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+
+  
   axios.get(locationApiUrl).then((data) => {
   celsiusTemperature = Math.round(data.data.main.temp);
-  document.getElementById("city").innerHTML = data.data.name;
-  document.getElementById("temperature").innerHTML = Math.round(data.data.main.temp);
-  document.getElementById("humidity").innerHTML = data.data.main.humidity;
-  document.getElementById("wind").innerHTML = Math.round(data.data.wind.speed);
-  document.getElementById("description").innerHTML = data.data.weather[0].main;
+
+  document.querySelector("#city").innerHTML = data.data.name;
+  document.querySelector("#temperature").innerHTML = Math.round(data.data.main.temp);
+  document.querySelector("#humidity").innerHTML = data.data.main.humidity;
+  document.querySelector("#wind").innerHTML = Math.round(data.data.wind.speed);
+  document.querySelector("#description").innerHTML = data.data.weather[0].main;
 });
 }
 
@@ -62,10 +65,7 @@ function currentTime() {
   }, 1000);
 }
 
-function changeCity(event, response) {
-  event.preventDefault();
-
-  console.log(response.data.weather)
+function changeCity(response) {
 
   let searchInput = document.querySelector("#search-bar");
   let temperatureValue = document.querySelector("h3");
@@ -85,15 +85,21 @@ function changeCity(event, response) {
 }
 
 function getTemperature(event) {
-  event.preventDefault();
-
   let city = document.querySelector("#search-bar").value;
   let units = "metric";
   let weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`;
-  axios.get(weatherApiUrl).then((response) => changeCity(event, response));
+
+  if (event) {
+    event.preventDefault();
+    return axios.get(weatherApiUrl).then((response) => changeCity(response));
+  }
+
+
+  axios.get(weatherApiUrl).then((response) => changeCity(response));
 }
 
 function changeTempUnit(event) {
+ 
   event.preventDefault();
   let farenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   let temperatureElement = document.querySelector("h1")
@@ -107,5 +113,7 @@ function changeTempUnit(event) {
   
 }
 
+getTemperature()
 navigator.geolocation.getCurrentPosition(showCurrentPosition);
 currentTime();
+
