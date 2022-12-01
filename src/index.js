@@ -37,7 +37,7 @@ function showCurrentPosition(position) {
   celsiusTemperature = Math.round(data.data.main.temp);
 
   document.querySelector("#city").innerHTML = data.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(data.data.main.temp);
+  // document.querySelector("#temperature").innerHTML = Math.round(data.data.main.temp);
   document.querySelector("#humidity").innerHTML = data.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(data.data.wind.speed);
   document.querySelector("#description").innerHTML = data.data.weather[0].main;
